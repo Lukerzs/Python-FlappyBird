@@ -10,7 +10,7 @@ class Background(pygame.sprite.Sprite):
         self._layer = Layer.BACKGROUND
         self.image = assets.get_sprite('background')
         self.rect = self.image.get_rect(topleft=(config.SCREEN_WIDTH * index, 0))
-
+        self.mask = pygame.mask.from_surface(self.image)
         super().__init__(*groups)
 
     def update(self):
